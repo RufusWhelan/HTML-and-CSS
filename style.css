@@ -1,27 +1,51 @@
-html{
-    background-color: lavender;
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: lavender;
 }
-body{
-    background-color: rgb(216, 216, 252);
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+/* Fixed page and grid sizing */
+.grid-container {
+  display: grid;                 /* block-level grid */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 200px 400px 400px; /* fixed row heights */
+  height: 100vh;
+  background-color: rgb(150, 222, 255);
+  padding: 10px;
+  box-sizing: border-box;
 }
-h1{
-    color: rgb(0, 20, 73);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+/* Lock each box size; let content overflow without rescaling */
+.item, .item2, .item3 {
+  border: 1px solid black;
+  padding: 20px;
+  box-sizing: border-box;   /* padding stays inside the fixed box */
+  overflow: auto;           /* scrollbars for overflow */
 }
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+
+/* Column spans */
+.item  { grid-column: span 1; text-align: center; }
+.item2 { grid-column: span 2; text-align: center; }
+.item3 { grid-column: span 3; text-align: left; }
+
+/* Typography stays natural (no scaling) */
+body {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-nav li {
-    display: inline;
-    margin-right: 20px;
+h1 {
+  color: rgb(0, 20, 73);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-nav a {
-    text-decoration: none;
-    color: rgb(59, 59, 255);
+
+/* Navigation */
+nav ul { list-style-type: none; margin: 0; padding: 0; }
+nav li { background-color: aquamarine; margin-bottom: 20px; padding-bottom: 5px; }
+nav a  { text-decoration: none; color: rgb(59, 59, 255); }
+img[src="images/CohenBaldwin.jpg"]
+{
+    height: 70%;
+    width: 70%;
 }
 img[src="images/CohenBaldwin-Host.jpg"]
 {
@@ -32,4 +56,37 @@ img[src="images/CohenBaldwin-Join.png"]
 {
     height: 40%;
     width: 40%;
+}
+.grid-container{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(150, 222, 255);
+    padding: 10px;
+}
+.item{
+    background-color: rgb(242, 242, 252);
+    border: 1px solid black;
+    padding: 20px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    grid-column: span 1;
+}
+.item2{
+    background-color: rgb(242, 242, 252);
+    border: 1px solid black;
+    padding: 20px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    grid-column: span 2;
+}
+.item3{
+    background-color: rgb(242, 242, 252);
+    padding: 30px;
+    border: 1px solid black;
+    justify-content: center;
+    align-content: center;
+    text-align: left;
+    grid-column: span 3;
 }
