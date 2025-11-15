@@ -4,31 +4,6 @@ html, body {
   background-color: lavender;
 }
 
-/* Fixed page and grid sizing */
-.grid-container {
-  display: grid;                 /* block-level grid */
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 200px 400px 400px; /* fixed row heights */
-  height: 100vh;
-  background-color: rgb(150, 222, 255);
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-/* Lock each box size; let content overflow without rescaling */
-.item, .item2, .item3 {
-  border: 1px solid black;
-  padding: 20px;
-  box-sizing: border-box;   /* padding stays inside the fixed box */
-  overflow: auto;           /* scrollbars for overflow */
-}
-
-/* Column spans */
-.item  { grid-column: span 1; text-align: center; }
-.item2 { grid-column: span 2; text-align: center; }
-.item3 { grid-column: span 3; text-align: left; }
-
-/* Typography stays natural (no scaling) */
 body {
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -38,26 +13,28 @@ h1 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-/* Navigation */
 nav ul { list-style-type: none; margin: 0; padding: 0; }
 nav li { background-color: aquamarine; margin-bottom: 20px; padding-bottom: 5px; }
 nav a  { text-decoration: none; color: rgb(59, 59, 255); }
 img[src="images/CohenBaldwin.jpg"]
 {
-    height: 70%;
-    width: 70%;
+    width: 1000px;
+    height: auto;
 }
 img[src="images/CohenBaldwin-Host.jpg"]
 {
-    height: 30%;
-    width: 30%;
+    width: 500px;
+    height: auto;
 }
 img[src="images/CohenBaldwin-Join.png"]
 {
-    height: 40%;
-    width: 40%;
+    width: 700px;
+    height: auto;
 }
 .grid-container{
+    min-height: 100vh;
+    width: 60%;
+    margin: auto;
     display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: rgb(150, 222, 255);
@@ -87,6 +64,24 @@ img[src="images/CohenBaldwin-Join.png"]
     border: 1px solid black;
     justify-content: center;
     align-content: center;
-    text-align: left;
+    text-align: center;
     grid-column: span 3;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 10px;
+    border: 1px solid #888;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
